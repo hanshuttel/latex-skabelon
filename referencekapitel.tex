@@ -1,0 +1,26 @@
+\chapter{Om krydsreferencer}
+
+Hvis ikke man kender til de rige muligheder for automatisk håndtering af referencer, som \latex har, er det som at trække rundt på cykelstien med en dyr racercykel og ærgre sig over, at man ikke kan komme hurtigere frem, fordi man er nødt til at trække rundt med hvad man tror er et dårligt designet løbehjul.
+
+\section{Krydsreferencer} \label{afs:kryds}
+
+Afsnit, underafsnit, tabeller, figurer og formler kan få numrei \latex. Det gør man med \verb2\label2-kommandoe, som placerer et mærke. Det kan man senere referere til med en \verb2\ref2. Se efter i kildeteksten til dette dokument for at lære, hvordan man laver en henvisning til afsnit \ref{afs:kilder}.
+
+Det er aldrig nok at skrive \verb2\ref2, for denne kommando skriver blot nummeret på den label, man henviser til. Jeg har defineret en kommando \verb2\afs2, der tager et mærke som argument og skriver "Afsnit'' og nummeret på mærket. Se, hvordan denne kommando er defineret og brugt. Jeg bruger den også her i \afs{afs:kryds}.
+
+Pakken \verb2cleveref2 tilbyder en lignende funktionalitet og er værd at overveje at bruge.
+
+\section{Kildehenvisninger} \label{afs:kilder}
+
+\begin{ovelse}
+  Prøv at skrive
+\begin{verbatim}
+\bibliographystyle{apalike}
+\end{verbatim}
+  i stedet for \verb2 \bibliographystyle{plain}2 og se, hvad der sker. Hvis du ikke bruger Overleaf, så husk at kompilere to gange.
+\end{ovelse}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:

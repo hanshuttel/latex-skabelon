@@ -1,0 +1,89 @@
+\chapter{Gode råd}
+
+\section{\latex  kan meget mere end du tror!}
+
+Mange nybegyndere tror, at de skal bruge Word-lignende krumspring for
+at få et bestemt udseende. Hvis det ikke lykkes for dem, konkluderer
+de ofte, at \latex må lide af alvorlige mangler.
+
+\subsection{Typiske misforståelser}
+
+\begin{itemize}
+\item Måske er det layout, man ønsker sig, ikke hensigtsmæssigt. Det
+  er almindeligt at man har vaner med sig fra gymnasiet og fra
+  Word-land, som snarere skyldes uvaner end stor typografisk
+  indsigt. Det er langt bedre at tage ved lære af typografien i
+  fagbøger og videnskabelige publikationer end at lade sig styre af en
+  gammel SRP-opgave.
+  
+\item Og der er med meget stor sandsynlighed snarere tale om at der er
+  noget, man ikke ved selv, end om noget, det er umuligt at gøre ved
+  brug af \latex.
+\end{itemize}
+
+\subsection{Noget om layout}
+
+Hvis man \emph{slet ikke} kan acceptere standard-layoutet og drømmer sig
+tilbage til SRP-dagene, er der pakken \verb2wordlike2. Her er stor
+linjeafstand, Times New Roman, smalle marginer og andet godt, så man
+kan genskabe det trygge gymnasielayout og drømme om Word-pølse.
+
+\begin{ovelse}
+  Prøv at skrive \verb2\usepackage{wordlike}2 i præamblen, og se hvad
+  der sker.
+\end{ovelse}
+
+Mange nybegyndere tror også, at de er nødt til at lave manuelle
+krumspring mange steder i et dokument for at styre dets layout. Typisk
+ved de ikke, at \verb2report2-dokumentklassen findes og kender kun
+\verb2article2. Derfor bruger de tvungne sideskift med
+\verb2\newpage2. Nybegyndere synes også ofte, at der skal være større
+afstand mellem paragraffer og indsætter tvungne linjeskift med
+\verb2\\2 overalt.
+
+Dette er en anden typisk arv fra Word-land, hvor man er nødt til at
+skulle håndtere den slags manuelt rundt om i Word-pølsen. Men i \latex
+er der en masse parametre, der bestemmer marginbredde, linjeafstand
+mm. Dem kan man selv sætte én gang for alle oppe i præamblen, så man
+ved en lille ændring dér kan ændre dokumentets layout fuldstændig.
+
+Se også
+\url{https://da.overleaf.com/learn/latex/Articles/How_to_change_paragraph_spacing_in_LaTeX},
+der forklarer de forskellige parametre, og hvordan man sætter dem ét
+sted i dokumentet.
+
+Her er nogle små øvelser, der viser hvad parametrene kan.
+
+\begin{ovelse}
+  Prøv at skrive \verb2\documentclass[a4paper,11pt,twocolumn]{report}2 i præamblen og se,
+  hvad der sker.
+\end{ovelse}
+
+\begin{ovelse}
+  Prøv at skrive
+\begin{verbatim}
+\setlength{\parskip}{4mm}
+\end{verbatim}
+  i præamblen og se, hvad der sker.
+\end{ovelse}
+
+\begin{ovelse}
+  Prøv at skrive
+\begin{verbatim}
+\setlength{\parindent}{0mm}
+\end{verbatim}
+  i præamblen og se, hvad der sker.
+\end{ovelse}
+
+\begin{ovelse}
+  Prøv at skrive
+  \begin{verbatim}
+\renewcommand\baselinestretch{1.5}
+\end{verbatim}
+  i præamblen og se, hvad der sker.
+\end{ovelse}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:

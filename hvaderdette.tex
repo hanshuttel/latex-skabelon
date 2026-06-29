@@ -1,0 +1,194 @@
+\chapter{Hvad er det her?}
+
+I afsnit \ref{afs:hvad} forklarer vi forskellen på  \TeX, \latex  og
+Overleaf. Og i afsnit \ref{afs:hvorfor} forklarer vi, hvorfor man bør
+bruge disse systemer, når man laver projektarbejde på datalogi.
+Endelig, i afsnit \ref{afs:komigang}, forklarer vi om filformater og
+hvordan man kommer i gang med at skrive dokumenter i \LaTeX.
+
+\section{ \TeX, \latex  og Overleaf} \label{afs:hvad}
+
+\begin{description}
+\item[\TeX] er et dokumentbehandlingssystem, der skyldes den
+  amerikanske datalog og matematiker Donald Knuth. Han brugte \TeX\ i
+  sin klassiker, flerbindsværket \emph{The Art of Computer
+    Programming} \cite{knuth1997computer} og dokumenterede \TeX\ i en
+  anden bog \cite{Knuth:1996}. Knuth fik ACM Turing Award, datalogiens
+  svar på Nobelprisen, for sit arbejde med algoritmeteori,
+  programmeringssprog og meget andet, så han er ikke helt dum.
+\item[\LaTeX] er et dokumentbehandlingssystem, der skyldes den
+  amerikanske datalog og matematiker Leslie Lamport. Lamport
+  implementerede \latex  som en samling definitioner af kommandoer og
+  environments, skrevet i \TeX. Han dokumenterede systemet i
+  \cite{lamport86latex}, der samtidig er en god indføring\footnote{Og
+    spørger man mig, er den stadig den bedste af slagsen.}. Knuth fik
+  ACM Turing Award, datalogiens svar på Nobelprisen, for sit arbejde
+  med teorier for specifikation og verifikation af distribuerede
+  systemer, så han er heller ikke helt dum. Nogle mennesker er glade
+  for \TeX, men de fleste bruger \LaTeX.
+
+  \TeX\ og \latex  kan installeres på din egen computer, og du kan
+  arbejde helt offline med systemet og bruge din yndlings-teksteditor
+  som f.eks. Visual Studio Code eller Emacs sammen med det, præcis
+  ligesom man kan med programmeringssprog. {\TeX}Live-distributionen
+  er et godt valg for mange, hvis man vælger denne løsning.
+  
+\item[Overleaf] er en online-løsning, som blev til i 2011 og skyldes
+  matematikerne John Hammersley og John Lees-Miller. Overleaf er en
+  løsning, der rummer en flerbruger-editor og ikke kræver, at man selv
+  installerer \TeX/\LaTeX. Mange studerende er glade for Overleaf af
+  disse grunde og kan være et godt sted at starte.
+\end{description}
+
+\section{Hvad er det, \latex  er godt til?}\label{afs:hvorfor}
+
+Mange, der ikke har brugt \latex  og lever i Word-land, tror, at
+\latex  bare er en slags "system til pænt layout med bøvlet brugergrænseflade''.
+Men sandheden er en ganske anden. 
+
+\begin{description}
+\item[Kollaborativ skrivning] En gruppe af studerende, der lever i Word-land,
+  skaber ofte en projektrapport, der er en kæmpestor Word-pølse, som de deler i
+  et Dropbox-katalog eller på anden vis.
+
+  Men \latex  understøtter helt direkte modulær skrivning. Man kan
+  dele et stort dokument op i mange små del-filer, som bliver samlet
+  af en main-fil. Dette dokument er et eksempel på dette. \latex gør
+  det muligt at gøre det, man \emph{egentlig gerne vil} i
+  gruppearbejde. Hvis man i forvejen beskæftiger sig med
+  programmering, ligner dette noget, man kender i forvejen.
+  
+\item[Automatisk styr på referencer] Noget af det, studerende i
+  Word-land bruger\footnote{eller spilder} en masse tid på, er at
+  opdatere krydsreferencer og litteraturhenvisninger i Word-pølsen
+  manuelt. Nogle studerende, der er begyndere udi \latex, tror at de
+  skal være i besiddelse af en stor \latex-pølse, som de er nødt til
+  at opdatere manuelt. Men \latex og \TeX\ er ud over mulighederne for
+  modularitet designet til at håndtere alt dette automatisk, så alle
+  ændringer kan håndteres automatisk af systemet. Man skal bruge tiden
+  på at tænke over sit projekt, ikke på at skulle håndtere at Figur 17 skal hedde
+  Figur 17 overalt i Word-pølsen.
+
+\item[Simple tekstfiler] \LaTeX-filer er \textsl{tekstfiler}, og de er meget
+  små. Selv små Word-pølser fylder temmelig meget. Min PhD-afhandling
+  fylder, alt inklusive, er 124 sider lang og fylder omkring 1
+  megabyte. Enhver \LaTeX- eller \TeX-fil kan åbnes i en vilkårlig
+  teksteditor som Emacs, Vim, Notepad eller Visual Studio Code.
+
+  Tekstfiler gør det muligt at bruge versionskontrol som Git til
+  kollaborativ skrivning på præcis samme måde som man kan bruge Git
+  til versionskontrol af programkode.
+
+\item[Bibliografi-databaser] \latex  er udviklet sammen med \bibtex, Alle danske universiteter har
+  universitetsbiblioteker, der tillader at man kan hente
+  bibliografi-oplysninger i \bibtex-format. Også de store
+  bibliografiservere som ACM Digital Library \cite{acmdl} og DBLP
+  \cite{dblp} tillader dette. På den måde kan man hente filer med
+  udtømmende oplysninger om sine
+  kilder i stedet for selv at skulle bøvle med at stykke oplysningerne sammen.
+
+\item[Egne kommandoer] \latex  er nem at udvide; det er muligt at lave
+  nye kommandoer og environments, så man kan lave nye genveje til de
+  samlinger af kommandoer, man ofte bruger. Hvis man i forvejen
+  beskæftiger sig med programmering, ligner også dette noget, man
+  kender i forvejen.
+  
+\item[Pakker] Fordi \TeX\ og \latex er nemme at udvide, findes der en
+  hel masse udvidelser som gør det nemt at skrive
+
+  \begin{itemize}
+  \item programkode (\texttt{listings} og \texttt{minted}), som vi
+    vender tilbage til i kapitel \ref{kap:kode}.
+  \item pseudokode (\texttt{algorithm})
+  \item indlejring og skalering af billedfiler (\texttt{graphicx}, som
+    vi vender tilbage til senere)
+  \item vektorgrafik (\texttt{tikz}, som reelt er et lille sprog i selv!)    
+  \end{itemize}
+
+\item[At skrive matematik] Alle hoved-personerne bag \TeX, \latex  og
+  Overleaf er matematikere og har stor ekspertise inden for matematisk
+  typografi. Skriver man matematik eller inden for andre fagområder,
+  hvor man bruger matematik i stort omfang, er der ikke noget seriøst
+  alternativ. Store sammenslutninger for fagmatematikere
+  som f.eks. American Mathematical Society er med til at udvikle nye
+  pakker til \LaTeX, og forlag, der udgiver faglitteratur inden for
+  matematik og naturvidenskab (herunder datalogi), kræver som
+  hovedregel, at forfattere bruger \LaTeX.
+\end{description}
+
+\section{Kom i gang med \LaTeX} \label{afs:komigang}
+
+Alle er meget velkomne til at bruge denne tekst som udgangspunkt --
+det er derfor, den er der.
+
+\subsection{Strukturen af et \LaTeX-dokument}
+
+En hovedfil består af to 
+\begin{itemize}
+\item En \emph{præambel} med pakke-importoplysninger, definitioner af
+  nye kommandoer og environments mm.
+\item En dokument-del, der er omkranset af
+  \verb2\begin{document}...\end{document}2. I denne del findes selve
+  teksten. 
+\end{itemize}
+
+I begge disse dele kan der være \verb2input2-kommandoer, der indlæser
+underfiler. 
+
+\subsection{Arbejdsgangen}
+
+Oprindelig gjorde implementationer af \TeX\ og \latex det, at de
+producerede en fil i dvi-format, som så skulle oversættes til en
+Postscript-fil eller en PDF-fil.
+
+Nyere implementationer som \texttt{pdflatex} springer dette led over
+og producerer en PDF-fil direkte fra tex-filen.
+
+\paragraph{Hvis man bruger kommandolinjen}
+
+Hvis hovedfilen hedder \verb2rapport.tex2, kompilerer man den ved at
+skrive
+
+\begin{verbatim}
+pdflatex rapport
+\end{verbatim}
+
+Denne kommando producerer en samling nye filer med forskellige
+informationer og et (forsøg på) et renderet output. Se
+\afs{subs:filer}.
+
+\paragraph{Hvis man bruger Overleaf}
+
+Hvis man bruger Overleaf, bliver dokumentet altid kompileret tre
+gange, så citationer og krydsreferencer er blevet samlet rigtigt op. 
+
+\subsection{Filformater} \label{subs:filer}.
+
+\begin{description}
+\item[tex] Filer med dette suffiks indeholder tekst, der bruger
+  \LaTeX-kommandoer.
+\item[aux] Filer med dette suffiks indeholder opsamlede data om referencer til
+  figurer, formler, litteratur mm. Disse filer er arbejdsgangens
+  "hukommelse'' og bruges til kompilering.
+\item[blg] Hvis man bruger \bibtex, er dette en hjælpefil.
+\item[bbl] Hvis man bruger \bibtex, er dette den bibliografi, der er
+  blevet dannet.
+\end{description}
+
+En af filerne er en \verb2aux2-fil, der samler krydsreferencer og
+kildehenvisninger. Den bliver genereret hver gang man kompilerer. Så
+hvis man kompilerer for første gang eller ændrer på henvisninger, kan
+man komme ud for at skulle kompilere én gang til og eventuelt for også
+at skulle bruge \textsc{Bib}\TeX til at samle kildehenvisninger op.
+
+\section{Det der med appendiks}
+
+I en projektrapport eller en artikel har man tit brug for at placere
+nogle dele af teksten i et appendiks. Sæt kommandoen \verb2\appendix2
+der, hvor appendikserne skal begynde. Derefter bliver alle kapitlet
+nummereret med bogstaver.
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:

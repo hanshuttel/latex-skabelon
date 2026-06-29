@@ -1,0 +1,37 @@
+% Baseret på https://gist.github.com/mpdehnel/cc43e89a09c18ef6a602
+
+\definecolor{mygreen}{rgb}{0,0.6,0}
+\definecolor{mygray}{rgb}{0.5,0.5,0.5}
+\definecolor{mymauve}{rgb}{0.58,0,0.82}
+\definecolor{verylightgray}{gray}{0.92}
+
+\lstset{ %
+  backgroundcolor=\color{verylightgray},     % Baggrundsfarve; kræver pakken
+                                                               % color - dvs. \usepackage{color} eller \usepackage{xcolor}
+  basicstyle=\footnotesize\ttfamily,   % Skrivemaskine-font
+  breakatwhitespace=false,                 % Intet linjeskift ved whitespace
+  breaklines=true,                                % Automatisk linjeskift
+  captionpos=b,                                    % Caption sat nederst i bunden
+  commentstyle=\color{mygreen},     % Kommentarer med grøn
+  escapeinside={\%*}{*)},                     % LaTeX-escape til hvis
+                                                               % man får brug for LaTeX-kommandoer i koden
+  extendedchars=true,                         % Tillader ikke-ASCII-tegn. Virker IKKE med UTF-8.
+  frame=single,                                      % Ramme om koden.
+  keywordstyle=\color{blue},               % Reserverede ord med blåt
+  numbers=left,                                     % Linjenummerering mod venstre
+  numbersep=5pt,                                % Afstand mellem linjenumre og kode
+  numberstyle=\tiny\color{mygray},   % LInjenumre med grå
+  rulecolor=\color{black},                     
+  showspaces=false,                             
+  showstringspaces=false,           
+  showtabs=false,
+  stepnumber=1,                    % Hver linje får et nummer
+  stringstyle=\color{mymauve},     
+  tabsize=2,
+  title=\lstname                   
+}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:

@@ -1,0 +1,30 @@
+\chapter{Kildekode} \label{kap:kode}
+
+\texttt{listings}-pakken er særdeles nyttig, hvis man skal have
+kildekode med i sin tekst. Listing \ref{listx} viser et første lille
+eksempel på hvad man kan.
+
+
+\begin{lstlisting}[caption={Et eksempel på Java-kode},label=listx,language=Java]
+ public class Main {
+  public static void main(String[] args) {
+    int time = 16;
+
+    if (time < 12) {
+      System.out.println("Dingo.");
+    } else if (time < 18) {
+      System.out.println("Mango.");
+    } else {
+      System.out.println("Bingo.");
+    }
+  }
+}
+\end{lstlisting}
+
+Man kan også definere sine egne environments, så kildekode i bestemte
+sprog bliver vist med reserverede ord fremhævet.
+
+%%% Local Variables:
+%%% mode: LaTeX
+%%% TeX-master: "report"
+%%% End:

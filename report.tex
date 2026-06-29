@@ -1,0 +1,64 @@
+\documentclass[a4paper,11pt]{report}
+
+\input{pakker}
+\input{listings-definitioner}
+\input{kommandoer}
+
+\title{Et kort dokument om \LaTeX}
+\author{Hans}
+
+\date{Februar 2026}
+
+
+
+
+
+
+% HER BEGYNDER DOKUMENTDELEN
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\chapter*{Forord}
+
+I min tid som censor på de danske datalogiuddannelser har jeg opdaget
+noget påfaldende: Datalogiuddannelsen på RUC er det eneste sted i den
+danske universitetsverden, hvor de fleste studerende bruger Microsoft
+Word i stor stil. De fleste kender ikke til \latex og ved ikke, hvad
+dette system tilbyder. Resultatet er kluntet opsatte projektrapporter
+og underlige, pølsede ad hoc-arbejdsgange, der slet ikke understøtter
+gruppearbejde godt.
+
+Denne tekst er et forsøg på at skabe en forandring til noget mere
+passende. Teksten på en og samme tid 
+
+\begin{itemize}
+\item et eksempel på hvordan man kan bruge \latex til at skrive
+  dokumenter med, når man studerer datalogi, og 
+  
+\item en guide til hvordan man kommer i gang med at bruge \LaTeX.
+\end{itemize}
+
+\input{hvaderdette}
+\input{matematikkapitel}
+\input{figurkapitel}
+\input{kildekode}
+\input{referencekapitel}
+\input{goderaad}
+
+\bibliography{litteratur}
+\bibliographystyle{apalike}
+
+\appendix
+
+\input{magisk}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

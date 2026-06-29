@@ -1,0 +1,76 @@
+\chapter{Om at skrive matematik}
+
+I \LaTeX\ skelner man mellem LR-mode (til brødtekst) og mathmode.
+
+\section{Inline vs. display-matematik}
+
+Matematik skrevet midt i en sætning kalder man \emph{inline}-matematik og
+skrives mellem dollartegn: \texttt{\$ ... \$}. For eksempel giver
+\texttt{\$f(n) = O(n \^{} 2)\$} resultatet $f(n) = O(n^2)$.
+ 
+Hvis matematikken skal stå for sig selv på egen linje, bruges
+\emph{display}-matematik med \texttt{\textbackslash[ ... \textbackslash]}
+eller \texttt{equation}-omgivelsen (sidstnævnte nummererer udtrykket):
+\begin{equation}
+  T(n) = 2T(n/2) + n
+\end{equation}
+ 
+\section{Eksponenter, indeks og brøker}
+Eksponenter skrives med \texttt{\^{}} og indeks med \texttt{\_}.
+Bruges der mere end et tegn, skal det sættes i tuborgklammer \texttt{\{\}}:
+ 
+\[
+  x^2, \quad a_i, \quad 2^{n+1}, \quad x_{i,j}
+\]
+ 
+Brøker skrives med \texttt{\textbackslash frac\{tæller\}\{nævner\}}:
+\[
+  \frac{n!}{k!(n-k)!}
+\]
+ 
+\section{Symboler og operatorer}
+\texttt{amsmath}-pakken giver adgang til mange nyttige symboler, f.eks.:
+\[
+  \sum_{i=1}^{n} i = \frac{n(n+1)}{2}, \qquad
+  \prod_{i=1}^{n} i, \qquad
+  \int_0^1 x^2 \, dx
+\]
+ 
+Mængdesymboler og logik, som ofte bruges i datalogi:
+\[
+  \forall x \in \mathbb{N},\ \exists y \in \mathbb{Z} : x \le y,
+  \qquad A \cup B, \qquad A \cap B, \qquad \neg p \lor q
+\]
+ 
+\section{Flerlinjede udregninger}
+Brug \texttt{align}-omgivelsen til at vise flere linjers udregning,
+linet op efter \texttt{\&}:
+\begin{align}
+  (a+b)^2 &= a^2 + 2ab + b^2 \\
+  &= a^2 + b^2 + 2ab
+\end{align}
+ 
+\section{Matricer}
+Matricer skrives med \texttt{pmatrix} (parenteser) eller
+\texttt{bmatrix} (kantede parenteser):
+
+\[
+  A = \begin{pmatrix} 1 & 2 \\ 3 & 4 \end{pmatrix}
+\]
+ 
+\section{Gode råd}
+\begin{itemize}
+  \item Indlæs altid pakken \texttt{amsmath} -- den udvider de
+    grundlæggende matematik-kommandoer betydeligt.
+  \item Brug \texttt{\textbackslash text\{...\}} til almindelig tekst
+    inde i en matematik-omgivelse, f.eks. $n \text{ er lige}$.
+  \item Lad være med at blande \texttt{\$...\$} og \texttt{equation}
+    -- vælg den, der passer til, om udtrykket skal stå i eller uden for
+    løbende tekst.
+  \item Kompiler ofte, så du hurtigt opdager fejl i din matematik-syntaks.
+  \end{itemize}
+  
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:

@@ -1,0 +1,30 @@
+\chapter{Om at lave figurer} \label{kap:figurer}
+
+Man kan nemt indlejre grafikfiler med \texttt{graphicx}-pakken, der
+tilbyder bla. \verb2\includegraphics2-kommandoen.
+
+Se \fig{fig:lamport} og læg mærke til, hvordan vi skalerer
+billedfilen, så den ere 7 centimeter bred i teksten.
+
+\begin{figure}[h]
+  \centering
+  \includegraphics[width=7cm]{figurer/lamport}
+  \caption{Leslie Lamport}
+  \label{fig:lamport}
+\end{figure}
+
+\texttt{tikz} er en pakke, der gør det muligt at beskrive vektorgrafik -- det
+er et helt lille programmeringssprog. Figur \ref{fig:tm}
+viser et eksempel, der ligger i en særskilt fil (indlæst med
+\verb2\input2-kommandoen). 
+
+\begin{figure}[h]
+\input{tm-figur}
+  \caption{Tilstandsdiagram for Turing-maskine}
+  \label{fig:tm}
+\end{figure}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: "report"
+%%% End:
