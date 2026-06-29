@@ -1,9 +1,32 @@
-\chapter{Kildekode} \label{kap:kode}
+\chapter{Algoritmer og kildekode} \label{kap:kode}
+
+\section{Algoritmer}
+
+Man kan skrive algoritmer ved brug af \verb2algorithmicx2-pakken og
+pseudokode ved \emph{også} at bruge \verb2algpseudocode2.
+
+\begin{algorithmic}
+\Require $n \geq 0$
+\Ensure $y = x^n$
+\State $y \Leftarrow 1$
+\State $X \Leftarrow x$
+\State $N \Leftarrow n$
+\While{$N \neq 0$}
+\If{$N$ is even}
+  \State $X \Leftarrow X \times X$
+  \State $N \Leftarrow \frac{N}{2} $  \Comment{This is a comment}
+\ElsIf{$N$ is odd}
+  \State $y \Leftarrow y \times X$
+  \State $N \Leftarrow N - 1$
+\EndIf
+\EndWhile
+\end{algorithmic}
+
+\section{Kode}
 
 \texttt{listings}-pakken er særdeles nyttig, hvis man skal have
 kildekode med i sin tekst. Listing \ref{listx} viser et første lille
 eksempel på hvad man kan.
-
 
 \begin{lstlisting}[caption={Et eksempel på Java-kode},label=listx,language=Java]
  public class Main {
